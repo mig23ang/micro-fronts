@@ -1,22 +1,22 @@
 {
-  "name": "prueba",
+  "name": "admin",
   "$schema": "../../node_modules/nx/schemas/project-schema.json",
   "projectType": "application",
   "prefix": "prueba",
-  "sourceRoot": "apps/prueba/src",
+  "sourceRoot": "apps/admin/src",
   "tags": [],
   "targets": {
     "build": {
       "executor": "@angular-devkit/build-angular:browser",
       "outputs": ["{options.outputPath}"],
       "options": {
-        "outputPath": "dist/apps/prueba",
-        "index": "apps/prueba/src/index.html",
-        "main": "apps/prueba/src/main.ts",
+        "outputPath": "dist/apps/admin",
+        "index": "apps/admin/src/index.html",
+        "main": "apps/admin/src/main.ts",
         "polyfills": ["zone.js"],
-        "tsConfig": "apps/prueba/tsconfig.app.json",
-        "assets": ["apps/prueba/src/favicon.ico", "apps/prueba/src/assets"],
-        "styles": ["apps/prueba/src/styles.scss"],
+        "tsConfig": "apps/admin/tsconfig.app.json",
+        "assets": ["apps/admin/src/favicon.ico", "apps/admin/src/assets"],
+        "styles": ["apps/admin/src/styles.scss"],
         "scripts": []
       },
       "configurations": {
@@ -50,10 +50,10 @@
       "executor": "@angular-devkit/build-angular:dev-server",
       "configurations": {
         "production": {
-          "browserTarget": "prueba:build:production"
+          "browserTarget": "admin:build:production"
         },
         "development": {
-          "browserTarget": "prueba:build:development"
+          "browserTarget": "admin:build:development"
         }
       },
       "defaultConfiguration": "development"
@@ -61,21 +61,21 @@
     "extract-i18n": {
       "executor": "@angular-devkit/build-angular:extract-i18n",
       "options": {
-        "browserTarget": "prueba:build"
+        "browserTarget": "admin:build"
       }
     },
     "lint": {
       "executor": "@nx/linter:eslint",
       "outputs": ["{options.outputFile}"],
       "options": {
-        "lintFilePatterns": ["apps/prueba/**/*.ts", "apps/prueba/**/*.html"]
+        "lintFilePatterns": ["apps/admin/**/*.ts", "apps/admin/**/*.html"]
       }
     },
     "test": {
       "executor": "@nx/jest:jest",
       "outputs": ["{workspaceRoot}/coverage/{projectRoot}"],
       "options": {
-        "jestConfig": "apps/prueba/jest.config.ts",
+        "jestConfig": "apps/admin/jest.config.ts",
         "passWithNoTests": true
       },
       "configurations": {
@@ -88,7 +88,7 @@
     "serve-static": {
       "executor": "@nx/web:file-server",
       "options": {
-        "buildTarget": "prueba:build"
+        "buildTarget": "admin:build"
       }
     }
   }
